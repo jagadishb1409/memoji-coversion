@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/fonts.css">
+	<link rel="shortcut icon" href="images/l.png" type="image/x-icon">
+	<title>Emoji</title>
+</head>
+<body style="background-color:#9ADCFF">
+	<h1 id="mh1">LOOK AT THE CAMERA</h1>
+        
+
+        <div class="row">
+
+			<div class="column" id="cols">
+				<!-- <main id="camera">
+	            	<canvas id="camera--sensor"></canvas>
+	            	<video id="camera--view" autoplay playsinline></video>
+	        	</main> -->
+	        	<!-- <img src = "{% url 'video_feed' %}"> -->
+			</div>
+
+			<div class="column" id="cols">
+				<img id="resimg" src="output/emoji1.svg">
+				<div id="resbtn">
+					<a href="#"><button class="btn btn-primary" style="margin-right: 80px;">Share</button></a>
+				    <a href="#"><button class="btn btn-danger">Download</button></a>
+				</div>
+			</div>
+	</div>
+
+	<script>
+      var imageSources = ["E:/pycharmprojects/django/capstone/static/output/emoji1.svg"]
+
+      var index = 0;
+      setInterval(function(){
+        if (index === imageSources.length) {
+          index = 0;
+        }
+        document.getElementById("resimg").src = imageSources[index];
+        index++;
+      }, 200);
+    </script>
+
+	<!-- <script src="{% static 'javascript/script.js' %}"></script> -->
+</body>
+</html>

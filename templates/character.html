@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/fonts.css' %}">
+	<link rel="shortcut icon" href="images/l.png" type="image/x-icon">
+	<title>Emoji</title>
+</head>
+<body style="background-color: #D8D2CB;">
+
+	<h1 id="mh1">CHOOSE ATTRIBUTES FOR YOUR CHARACTER</h1>
+
+	<div id="card1" class="card">
+		<div class="card-body">
+			<form action="/res/{{gender.id}}/" method="get">
+				<table>
+					<tr><!-------------------Skin Color------------------->
+						<td><h3>Skin Color:</h3></td>
+						<td>
+							{% for sc in skincolor %}
+							<label>
+								<input type="radio" name="skincolor" value="{{sc.id}}" required>
+								<img id="opts" src="{{sc.image.url}}"title="{{sc.name}}">
+							</label>
+							{% endfor %}
+						</td>
+					</tr>
+
+					<tr><!--------------Clothing Color------------------->
+						<td><h3>Clothing Color:</h3></td>
+						<td>
+							{% for cc in clothingcolor %}
+							<label>
+								<input type="radio" name="clothingcolor" value="{{cc.id}}" required>
+								<img id="opts" src="{{cc.image.url}}"
+								title="{{cc.name}}">
+							</label>
+							{% endfor %}
+						</td>
+					</tr>
+                    
+					<tr><!--------------Hair Color------------------->
+						<td><h3>Hair Color:</h3></td>
+						<td>
+							{% for hc in haircolor %}
+							<label>
+								<input type="radio" name="haircolor" value="{{hc.id}}" required>
+								<img id="opts" src="{{hc.image.url}}"title="{{hc.name}}">
+							</label>
+							{% endfor %}
+						</td>
+					</tr>
+
+					<tr><!--------------Hair type------------------->
+						<td><h3>Hair Type:</h3></td>
+							<td>
+								{% for ht in hairtype %}
+									{% if gender.id == 1 and ht.gender == 'Male' %}
+										<label>
+											<input type="radio" name="hairtype" value="{{ht.id}}"  required>
+												
+											<img id="optsgen" src="{{ht.image.url}}"title="{{ht.name}}">
+										</label>
+										{% elif gender.id == 2 and ht.gender == 'Female' %}
+										<label>
+											<input type="radio" name="hairtype"  value="{{ht.id}}"  required>
+												
+											<img id="optsgen" src="{{ht.image.url}}"title="{{ht.name}}">
+										</label>
+									{% endif %}
+								{% endfor %}
+							</td>
+					</tr>
+						
+
+					<tr><!--------------Clothing type------------------->
+						<td><h3>Clothing Type:</h3></td>
+						<td>
+							{% for ct in clothingtype %}
+								{% if gender.id == 1 and ct.gender == 'Male' %}
+									<label>
+										<input type="radio" name="clothingtype" value="{{ct.id}}" required>
+										<img id="optsgen" src="{{ct.image.url}}"title="{{ct.name}}">
+									</label>
+								{% elif gender.id == 2 and ct.gender == 'Female' %}
+									<label>
+										<input type="radio" name="clothingtype" value="{{ct.id}}" required>
+										<img id="optsgen" src="{{ct.image.url}}"title="ct.name">
+									</label>
+								{% endif %}		
+							{% endfor %}
+						</td>
+					</tr>
+					{% if gender.id == 1 %}
+					<tr><!--------------Facial Hair type------------------->
+						<td><h3>Facial Hair Type:</h3></td>
+						<td>
+							{% for fht in facialhairtype %}
+							<label>
+								<input type="radio" name="facialhairtype" value="{{fht.id}}" required>
+								<img id="optsgen" src="{{fht.image.url}}"title="{{fht.name}}">
+							</label>
+							{% endfor %}
+						</td>
+					</tr>
+					{% endif %}
+
+					<tr><!--------------Accessory------------------->
+						<td><h3>Accessory:</h3></td>
+						<td>
+							{% for access in accessory %}
+								{% if gender.id == 1 and access.gender == 'Male' %}
+									<label>
+										<input type="radio" name="accessory" value="{{access.id}}" required>
+										<img id="optsgen" src="{{access.image.url}}"title="{{access.name}}">
+									</label>
+								{% elif gender.id == 2 and access.gender == 'Female' %}	
+									<label>
+										<input type="radio" name="accessory" value="{{access.id}}" required>
+										<img id="optsgen" src="{{access.image.url}}"title="{{access.name}}">
+									</label>
+								{% endif %}	
+							{% endfor %}
+						</td>
+					</tr>
+
+				</table>
+				
+				<br>
+				<input class="btn btn-success" type="submit" name="submit" style="display: block; margin: auto;">
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

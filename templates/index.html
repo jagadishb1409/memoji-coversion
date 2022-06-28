@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/fonts.css' %}">
+	<link rel="shortcut icon" href="images/l.png" type="image/x-icon">
+	<title>Emoji</title>
+</head>
+<body style="background-color:#6BCB77">
+	<h1 id="mh1">EMOJI CREATION USING DEEP LEARNING IN REAL TIME <br> SELECT YOUR GENDER</h1>
+
+	<div class="row">
+
+		{% for gen in gender %}
+		<div class="column" id="cols">
+			<a href="/gender/{{gen.id}}/"><img id="genimg" src="{{gen.image.url}}"></a>
+			<h3 style="text-align: center;margin-top: 20px;">{{gen.name}}</h3>
+		</div>
+		{% endfor %}
+		
+	</div>
+</body>
+</html>

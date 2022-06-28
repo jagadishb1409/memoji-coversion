@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/fonts.css' %}">
+	<link rel="shortcut icon" href="{% static 'images/l.png' %}" type="image/x-icon">
+	<title>Emoji</title>
+</head>
+<body style="background-color:#9ADCFF">
+
+	<h1 id="mh1">LOOK AT THE CAMERA</h1>
+   
+  <div class="row">
+		<div class="column" id="cols">
+	   	<img src = "{% url 'video_feed' %}">
+		</div>
+
+
+	  <div class="column" id="cols">
+			<img id="resimg" src="{% static 'output/emoji1.svg' %}">
+			<div id="resbtn" style="margin-left: 190px;"> 
+	   		<button type="submit" onClick="refreshPage()" class="btn btn-success" style="width:150px;height: 37px;">Generate Emoji</button>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+	<script>
+
+		function refreshPage(){
+    	window.location.reload();
+		}
+
+
+		var newImage = new Image();
+		var number=0;
+		newImage.src = "E:/pycharmprojects/django/capstone/static/output/emoji1.svg";
+
+		setInterval(updateImage, 200);
+			function updateImage()
+			{
+				if(newImage.complete) {
+		    	document.getElementById("resimg").src = newImage.src;
+		    	newImage = new Image();
+		    	number++;
+		    	newImage.src = "E:/pycharmprojects/django/capstone/static/output/emoji1.svg" + new Date().getTime();
+				}
+		  }
+	</script>
+
+
+</body>
+</html>
