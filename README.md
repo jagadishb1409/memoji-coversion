@@ -17,7 +17,7 @@ in medicine, marketing and entertainment. </p>
 i. To develop a CNN model for detecting facial expressions to classify them into seven emotions
 like Angry, Disgust, Fear, Happy, Sad, Surprise and Neutral.
 
-ii. To develop a website that can convert facial expressions to personalised emoji’s
+ii. To develop a website that can convert facial expressions to personalised memoji’s
 at real time using Facecam.
 
 ## Problem statement
@@ -119,7 +119,7 @@ format.
 Here we are making use of the python module named ‘python-avatars’. There are many
 attributes provided like skin colour, hair colour, clothing colour, hair style, clothing style,
 facial hair style, accessories etc. With the help of these attributes combinations we can create different avatars which can
-be later used as an emoji for the GUI part.
+be later used as an memoji for the GUI part.
 
 ### GUI using Django as Framework
 
@@ -127,11 +127,11 @@ Django is a high-level python web framework and with the help of this we can dev
 and maintainable websites in an efficient manner. It has many built-in python libraries which
 makes it suitable for both frontend and backend.
 Here we created html forms which takes all the inputs which are connected to the attributes
-for creating the emoji. Once the inputs are submitted, all those corresponding attributes are
-used and an avatar with .svg file extension is created. The emotion prediction part from the
+for creating the memoji. Once the inputs are submitted, all those corresponding attributes are
+used and an avatar with .png file extension is created. The emotion prediction part from the
 module 1 and the avatar generation part from module 2 are integrated.
 Now, here the CNN model keep on detecting the emotions and when we click on the
-generate emoji button the emotion at that point of time is converted to Emoji. Below is the
+generate memoji button the emotion at that point of time is converted to memoji. Below is the
 first page which is common for both genders.
 
 ![image](https://user-images.githubusercontent.com/63513035/176342472-d9fbc172-34a5-42ee-8c24-ff05d0a5c0e1.png)
@@ -198,11 +198,11 @@ of the person is detected and converted into memoji and that memoji gets downloa
 This project implements a simple and effective system for real-time face emotion recognition.
 Wearable detectors are frequently used in other techniques. The designed solution is based
 on a low-cost web camera. The feature extraction technology employed enables for dynamic
-classification of human facial expression emotions and production of personalised emoji in real
+classification of human facial expression emotions and production of personalised memoji in real
 time based on the user’s preferences utilising various variables. With an accuracy rate of 82.41%, 
 the model produced good results. Future work could include evaluating the performance
 of our architecture on various data sets by taking training and testing samples from diverse data
-sets. Furthermore, emojis can be utilised with more customised elements like as accessories,
+sets. Furthermore, memojis can be utilised with more customised elements like as accessories,
 special attire.NFTs (Non Fungible Tokens) can be utilised as a type of transaction in virtual
 worlds such as META. Additionally, by improving camera quality and hardware capability, the
 current system can be improved to forecast with greater accuracy while still using the existing
